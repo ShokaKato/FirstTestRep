@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>GraphTest</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+	<link href="fcjs/fullcalendar.min.css" rel="stylesheet" type="text/css">
+
+	<script src="jquery-2.1.4.min.js"></script>
+	
+	<script src="Chart.min.js"></script>
+	<script type="text/javascript" src="hcjs/highcharts.js"></script>
+	<script type="text/javascript" src="hcjs/chart.js"></script>
+
+
+	<script type="text/javascript" src="fcjs/moment.min.js"></script>
+	<script type="text/javascript" src="fcjs/jquery-ui.custom.min.js"></script>
+	<script type="text/javascript" src="fcjs/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="fcjs/ja.js"></script>
+	
+
+</head>
+<body>
+
+<input type="text" id="t1" value="Hello, world!"><input type="button" id="b1" value="OK"> jQuery動作確認 -->
+
+<div class="container">
+
+	<div class="header clearfix">
+		<nav>
+			<ul class="nav nav-pills pull-right">
+				<li role="presentation" class="active"><a href="index.html">Home</a></li>
+				<li role="presentation"><a href="#">About</a></li>
+				<!--<li role="presentation"><a href="#">Contact</a></li>-->
+			</ul>
+		</nav>
+	<h3 class="text-muted">GraphTest</h3>
+
+	</div>
+
+	<div class="jumbotron">
+		<h1>EyeCatch!</h1>
+		<p class="lead">てきとうなこんてんつ</p>
+		<!--<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>-->
+	</div>
+
+	<div class="row marketing">
+		<div class="col-lg-6">
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+		</div>
+
+		<div class="col-lg-6">
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+		</div>
+
+	</div>
+
+	ここでグラフの描画チェック<br><br>
+
+
+
+	<script src="jtest.js"></script>
+
+
+	<!-- チャート表示 -->
+	<div id="chartpart"></div>
+
+<!--
+	<script>
+
+
+$(function () {
+    $('#chartpart').highcharts({
+      chart: {
+        width:500,
+        heigth:300
+      },
+      title: {
+        text: 'Monthly Average Temperature',
+        x: -20 //center
+      },
+      subtitle: {
+        text: 'Source: WorldClimate.com',
+        x: -20
+      },
+      xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+      tooltip: {
+        valueSuffix: '°C'
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [{
+        name: 'Tokyo',
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+      }, {
+        name: 'New York',
+        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+      }, {
+        name: 'Berlin',
+        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+      }, {
+        name: 'London',
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }]
+    });
+  });
+
+
+
+	</script>-->
+
+
+<script>
+
+
+$(function () {
+
+	var testa = new Array(64);
+	testa = [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8];
+
+	testa[2] = 0;
+	testa[4] = 0;
+
+
+    $('#chartpart').highcharts({
+      chart: {
+        width:700,
+        heigth:400
+      },
+      title: {
+        text: 'Title',
+        x: -20 //center
+      },
+      subtitle: {
+        text: 'SubTitle',
+        x: -20
+      },
+      xAxis: {
+        categories: ['First', 'Second']
+      },
+      yAxis: {
+        title: {
+          text: 'tatejikuName (TANI)'
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+      tooltip: {
+        valueSuffix: 'korenani1'
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [
+      {
+        name: 'Tokyo',
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+      }, {
+        name: 'New York',
+        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+      },
+
+	{
+
+	name: 'testData',
+	data: testa
+
+	}
+	/*, {
+        name: 'Berlin',
+        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+      }, {
+        name: 'London',
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }*/
+      ]
+    });
+  });
+
+
+
+	</script>
+
+ここからカレンダー<br><br><br>
+
+<div id="calendar"></div>
+<script>$('#calendar').fullCalendar();</script>
+
+<script>
+/*ここから↓上手く動かなかった
+$('#calendar').fullCalendar({
+	//ヘッダーの設定
+	header: {
+		//それぞれの位置に設置するボタンやタイトルをスペース区切りで指定できます。指定しない場合、非表示にできます。
+		// 'title'→月・週・日のそれぞれの表示に応じたタイトル
+		// 'prev'→前へボタン
+		// 'next'→次へボタン
+		// 'today'→当日表示ボタン
+		left: 'today prev', //左側に配置する要素
+		center: 'title', //中央に配置する要素
+		right: 'next' //右側に配置する要素
+	}
+ 
+	height: 960, //高さをピクセルで指定
+	defaultView: 'agendaDay', //初めの表示内容を指定　内容はこちらを参照→ http://fullcalendar.io/docs/views/Available_Views/
+	aditable: true, //trueでスケジュールを編集可能にする
+	allDaySlot: false,　//falseでagendaDay表示のときに全日の予定欄を非表示にする
+	
+	//時間の表示フォーマットを指定する　指定方法はこちらを参照→http://momentjs.com/docs/#/displaying/format/
+	timeFormat: {
+		agenda: 'h(:mm)'
+	},
+	slotEventOverlap: false, //スケジュールが重なったとき、重ねて表示するかどうか（falseにすると、重ねずに表示する）
+	axisFormat: 'H:mm', //時間軸に表示する時間の表示フォーマットを指定する(ヒョジ方法はtimeFormatと同じ)
+	slotDuration: '01:00:00', //表示する時間軸の細かさ
+	snapDuration: '01:00:00', //スケジュールをスナップするときの動かせる細かさ
+	minTime: "00:00:00", //スケジュールの開始時間
+	maxTime: "24:00:00", //スケジュールの最終時間
+	defaultTimedEventDuration: '01:00:00', //画面上に表示する初めの時間(スクロールされている場所)
+	eventClick: function(event) { //イベントをクリックしたときに実行
+ 
+	},
+	dayClick: function(date){ //イベントじゃないところをクリックしたとき(日をクリックしたとき)に実行
+ 
+	},
+	droppable: true, //外部要素からのドラッグアンドドロップを可にする
+	drop: function(date){ //外部要素からドラッグアンドドロップしたときに実行
+ 
+	},
+	eventDragStop: { //カレンダー上にドラッグし終わったときに実行
+ 
+	}
+ 
+	//カレンダーを再描画
+	$('#calendar').fullCalendar('rendar');
+ 
+	//カレンダーを削除
+	$('#calendar').fullCalendar('destroy');
+ 
+	//イベントを追加
+	$('#calendar').fullCalendar('renderEvent', event, true); //eventはeventオブジェクト
+ 
+	//イベントを更新
+	$('#calendar').fullCalendar('updateEvent', event);
+ 
+ 
+});
+*/
+</script>
+
+
+	<footer class="footer">
+		<p>&copy; sk</p>
+	</footer>
+
+</div><!-- /container -->
+
+<br><br>
+
+</body>
+</html>

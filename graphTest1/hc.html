@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>GraphTest</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+	<script src="jquery-2.1.4.min.js"></script>
+	
+	<script src="Chart.min.js"></script>
+	<script type="text/javascript" src="hcjs/highcharts.js"></script>
+	<script type="text/javascript" src="hcjs/chart.js"></script>
+	
+
+</head>
+<body>
+
+<input type="text" id="t1" value="Hello, world!"><input type="button" id="b1" value="OK"> jQuery動作確認 -->
+
+<div class="container">
+
+	<div class="header clearfix">
+		<nav>
+			<ul class="nav nav-pills pull-right">
+				<li role="presentation" class="active"><a href="index.html">Home</a></li>
+				<li role="presentation"><a href="#">About</a></li>
+				<!--<li role="presentation"><a href="#">Contact</a></li>-->
+			</ul>
+		</nav>
+	<h3 class="text-muted">GraphTest</h3>
+
+	</div>
+
+	<div class="jumbotron">
+		<h1>EyeCatch!</h1>
+		<p class="lead">てきとうなこんてんつ</p>
+		<!--<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>-->
+	</div>
+
+	<div class="row marketing">
+		<div class="col-lg-6">
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+		</div>
+
+		<div class="col-lg-6">
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+			<h4>さぶたいとる</h4>
+			<p>ないよう</p>
+
+		</div>
+
+	</div>
+
+	ここでグラフの描画チェック<br><br>
+
+
+
+	<script src="jtest.js"></script>
+
+
+	<!-- チャート表示 -->
+	<div id="chartpart"></div>
+
+<!--
+	<script>
+
+
+$(function () {
+    $('#chartpart').highcharts({
+      chart: {
+        width:500,
+        heigth:300
+      },
+      title: {
+        text: 'Monthly Average Temperature',
+        x: -20 //center
+      },
+      subtitle: {
+        text: 'Source: WorldClimate.com',
+        x: -20
+      },
+      xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+      tooltip: {
+        valueSuffix: '°C'
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [{
+        name: 'Tokyo',
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+      }, {
+        name: 'New York',
+        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+      }, {
+        name: 'Berlin',
+        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+      }, {
+        name: 'London',
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }]
+    });
+  });
+
+
+
+	</script>-->
+
+
+<script>
+
+
+$(function () {
+
+	var testa = new Array(64);
+	testa = [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8];
+
+	testa[2] = 0;
+	testa[4] = 0;
+
+
+    $('#chartpart').highcharts({
+      chart: {
+        width:700,
+        heigth:400
+      },
+      title: {
+        text: 'Title',
+        x: -20 //center
+      },
+      subtitle: {
+        text: 'SubTitle',
+        x: -20
+      },
+      xAxis: {
+        categories: ['First', 'Second']
+      },
+      yAxis: {
+        title: {
+          text: 'tatejikuName (TANI)'
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+      tooltip: {
+        valueSuffix: 'korenani1'
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+      },
+      series: [
+      {
+        name: 'Tokyo',
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+      }, {
+        name: 'New York',
+        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+      },
+
+	{
+
+	name: 'testData',
+	data: testa
+
+	}
+	/*, {
+        name: 'Berlin',
+        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+      }, {
+        name: 'London',
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }*/
+      ]
+    });
+  });
+
+
+
+	</script>
+
+	<footer class="footer">
+		<p>&copy; sk</p>
+	</footer>
+
+</div><!-- /container -->
+
+<br><br>
+
+</body>
+</html>
